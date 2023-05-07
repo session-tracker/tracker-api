@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from core.config import get_config
-from core.api.v1.api_router import router as api_v1_router
+from api.v1.api_router import router as api_v1_router
 
 def get_application() -> FastAPI:
     project_name = get_config().project_name

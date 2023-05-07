@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from core.api.v1.models.pong import Pong
+from api.v1.models.pong import Pong
 from core.config import get_config
 
 router = APIRouter()
