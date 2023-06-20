@@ -5,11 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                echo 'Finished build..'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
+                sh 'pytest tests/api_tests.py'
+                echo 'Finished tests.'
             }
         }
         stage('Deploy') {

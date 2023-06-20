@@ -16,4 +16,3 @@ def test_ping():
 
     assert response.status_code == 200
     assert data['description'] == pong.description
-
