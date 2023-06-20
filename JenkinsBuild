@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo 'Testing..'
                 sh 'python3 -m venv ./venv/'
-                sh 'source /venv/bin/activate'
+                sh 'source venv/bin/activate'
                 sh 'pytest tests/api_tests.py'
                 echo 'Finished tests.'
             }
