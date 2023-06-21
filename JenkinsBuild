@@ -5,17 +5,25 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+
+                sh '''#!/bin/bash
+                    python3 -m venv ./venv/
+                    source venv/bin/activate
+
+                    pip install -r requirements.txt
+                '''
+
                 echo 'Finished build..'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
+
                 sh '''#!/bin/bash
-                    python3 -m venv ./venv/
-                    source venv/bin/activate
                     pytest tests/api_tests.py
                 '''
+
                 echo 'Finished tests'
             }
         }
